@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"
     <title>Trivia- ASSEMBLE!</title>
 </head>
 <body>
     <body onload="show()">
 
-    <h3>Trivia- ASSEMBLE!</h3>
+<div class="container">
+    <h3>
+        Trivia- ASSEMBLE!
+    
+        <div id="question"></div>
+    </h3>
     
     <div id= "numberedQuest"><span class="num">1 </span>/ 10</div>
     <br>
 
-    <h2>
-        <div id="question"></div>
-    </h2>
+  
     <br>
     <div id="response"> 
         <button id="btnA"><div class="answer" id="a" onclick="result()"></div></button>
@@ -25,6 +29,7 @@
         <button id="btnD"><div class="answer" id="d" onclick="result()"> </div></button>
     
     </div>
+</div>
     <br>
 
     <button class="blankRs"><a href="index.html">Reset!</a></button>
