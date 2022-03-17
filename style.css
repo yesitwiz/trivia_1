@@ -1,12 +1,43 @@
+body {
+    background-color: #aa0505;
+    
+}
 .starterHead {
     background-color: #518dca;
+    text-align: center; 
+    padding: 2%;
+    border: 8%;
+    margin: 10%;
 }
 
 .starterDiv {
     background-color: #F78F3F;
+    text-align: center;
+    padding: 8%;
+    border: 20%;
+    margin: 10%
 }
-
+#start {
+    background-color: #F78F3F;
+    position: relative;
+    left: 50%;
+    margin-top: 5%;
+    border: none;
+}
 .container{
     background-color: gainsboro;
     text-align: center;
+    padding: 5%;
+}
+.btn {
+    background-color: #fbca03;
+    padding: 1.5%;
+    color: black;
+    border: none;
+}
+
+.blankRS {
+    background-color: gainsboro;
+    
+    border: none; 
 }

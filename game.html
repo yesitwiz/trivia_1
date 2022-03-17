@@ -4,35 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css"
-    <title>Trivia- ASSEMBLE!</title>
+    <link rel="stylesheet" href="style.css">
+    <title> MCU Trivia - Assemble! </title>
 </head>
 <body>
     <body onload="show()">
 
 <div class="container">
     <h3>
-        Trivia- ASSEMBLE!
-    
-        <div id="question"></div>
+        Trivia- ASSEMBLE!    
     </h3>
     
     <div id= "numberedQuest"><span class="num">1 </span>/ 10</div>
     <br>
 
-  
+    <div id="question"></div>
     <br>
+
     <div id="response"> 
-        <button id="btnA"><div class="answer" id="a" onclick="result()"></div></button>
-        <button id="btnB"><div class="answer" id="b" onclick="result()"> </div></button>
-        <button id="btnC"><div class="answer" id="c" onclick="result()"> </div></button>
-        <button id="btnD"><div class="answer" id="d" onclick="result()"> </div></button>
+        <button class="btn" id="btnA"><div class="answer" id="a"> </div></button>
+        <button class="btn" id="btnB"><div class="answer" id="b"> </div></button>
+        <button class="btn" id="btnC"><div class="answer" id="c"> </div></button>
+        <button class="btn" id="btnD"><div class="answer" id="d"> </div></button>
     
     </div>
 </div>
     <br>
 
-    <button class="blankRs"><a href="index.html">Reset!</a></button>
+    <div class="rsBtn">
+    <button class="blankRs"><a href="index.html" style="text-decoration:none">Reset!</a></button>
+    </div>
     
     <script src="script.js"></script>
 </body>
