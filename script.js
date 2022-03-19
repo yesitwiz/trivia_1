@@ -1,4 +1,4 @@
-console.log('I\'m working!')
+// console.log('I\'m working!')
 
 //game.html
 let presentedQues = document.getElementById("question");
@@ -12,15 +12,19 @@ let presentedAns4 = document.getElementById("btnD");
 let response = document.getElementById("response");
 
 let counter = document.querySelector(".num");
+let total=document.getElementById('resNum');
 let score = 0;
 
 function newBtn() {
-    console.log(counter.innerHTML);
+    // console.log(counter.innerHTML);
+    //counter is 1 ahead of index for the question. this levels the counter to match with the index
     let quesID = counter.innerHTML - 1
+    //targeting the array,index, answer for that ques
     let ans = gameLogic[quesID].answer
-    console.log(ans)
-    console.log(selected)
+    // console.log(ans)
+    // console.log(selected)
     if(ans == selected) {
+        score++
         alert('correct**')
     } else {
         alert('incorrect**')
@@ -153,17 +157,23 @@ let gameLogic = [
 
 function loop() {
     show(counter.innerHTML++)
+    if(counter.innerHTML > 10) {
+        window.location='results.html';
+        total.innerHTML = (score + gameLogic.length);
+    }
 }
 
 let selected = ""
 
 function show(plus) {
-//plus is the num of qus to show
+    //workaround to not re-write the onclick=show in html
+//plus is the num of ques to show
 if(plus == undefined) {
     plus = 0
 }
 if(plus >= gameLogic.length) {
-    resultsPage
+    loop
+    // resultsPage
     //put results where ques used to be 
 } else {
 
@@ -179,32 +189,32 @@ if(plus >= gameLogic.length) {
     presentedAns4.innerHTML = num0.opts['d'];
 
     presentedAns.addEventListener('click', () => {
-        presentedAns.style.backgroundColor = "green";
-    presentedAns2.style.backgroundColor = "red";
-    presentedAns3.style.backgroundColor = "red";
-    presentedAns4.style.backgroundColor = "red";
+        presentedAns.style.backgroundColor = "gold";
+    presentedAns2.style.backgroundColor = "purple";
+    presentedAns3.style.backgroundColor = "purple";
+    presentedAns4.style.backgroundColor = "purple";
     selected = 'a'
     })
 
 presentedAns2.addEventListener('click', () => {
-    presentedAns2.style.backgroundColor = "green";
-presentedAns.style.backgroundColor = "red";
-presentedAns3.style.backgroundColor = "red";
-presentedAns4.style.backgroundColor = "red";
+    presentedAns2.style.backgroundColor = "gold";
+presentedAns.style.backgroundColor = "purple";
+presentedAns3.style.backgroundColor = "purple";
+presentedAns4.style.backgroundColor = "puple";
 selected = 'b'
 })
 presentedAns3.addEventListener('click', () => {
-    presentedAns3.style.backgroundColor = "green";
-presentedAns2.style.backgroundColor = "red";
-presentedAns.style.backgroundColor = "red";
-presentedAns4.style.backgroundColor = "red";
+    presentedAns3.style.backgroundColor = "gold";
+presentedAns2.style.backgroundColor = "purple";
+presentedAns.style.backgroundColor = "purple";
+presentedAns4.style.backgroundColor = "purple";
 selected = 'c'
 })
 presentedAns4.addEventListener('click', () => {
-    presentedAns4.style.backgroundColor = "green";
-presentedAns2.style.backgroundColor = "red";
-presentedAns3.style.backgroundColor = "red";
-presentedAns.style.backgroundColor = "red";
+    presentedAns4.style.backgroundColor = "gold";
+presentedAns2.style.backgroundColor = "purple";
+presentedAns3.style.backgroundColor = "purple";
+presentedAns.style.backgroundColor = "purple";
 selected = 'd'
 })
     }

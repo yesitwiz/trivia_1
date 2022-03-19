@@ -10,10 +10,11 @@
 <body>
     <body onload="show()"></body>
 
-<div class="main-container">
     <h3>
         Trivia- ASSEMBLE!    
     </h3>
+<div class="main-container">
+    
     <div class="result">
 
     </div>
@@ -33,10 +34,10 @@
 </div>
     <br>
 
-    <div class="rsBtn">
-    <button class="blankRs"><a href="index.html" style="text-decoration:none">Reset!</a></button>
-        <button id="checkID" onclick="newBtn()">Check Answer</button>
-        <button id="nextBtn" onclick="loop()">Next</button>
+    <div id="multBtn">
+    <button class="btnSelection" id="blankRs"><a href="index.html" style="text-decoration:none">Reset!</a></button>
+        <button class="btnSelection" id="checkID" onclick="newBtn()">Check Answer</button>
+        <button class="btnSelection" id="nextBtn" onclick="loop()">Next</button>
     </div>
     
     <script src="script.js"></script>

@@ -7,10 +7,15 @@ body {
     
 }
 .main-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-color: aliceblue;
+    text-align: center;
     align-items:stretch;
+    padding: 6%;
+    border: 6%;
+    margin: 5%;
+}
+.results-container {
+   background-color: #aa0505;
 }
 .starterHead {
     background-color: #518dca;
@@ -23,9 +28,9 @@ body {
 .starterDiv {
     background-color: #F78F3F;
     text-align: center;
-    padding: 8%;
-    border: 20%;
-    margin: 10%
+    padding: 6%;
+    border: 8%;
+    margin: 10%;
 }
 #start {
     background-color: #F78F3F;
@@ -36,20 +41,63 @@ body {
 }
 .btn {
     background-color: #fbca03;
+    color: white;
     padding: 1.5%;
-    color: black;
     border: none;
 }
 
-.blankRS {
-    background-color: gainsboro;
-    
-    border: none; 
+.btnSelection {
+    background-color: #a2cd4e;
+    position: relative;
+    left: 60%;
+    margin-top: 0px;
+    padding: 1%;
+    border: none;
 }
+
 #results{
     left: 90%;
     border: none;
 }
 #right {
     list-style: none;
+}
+.results-container {
+    background-color: lavender;
+    text-align: center;
+    margin: 8%;
+    padding: 2%;
+}
+#resHead {
+    text-align: left;
+    margin-top: 1%;
+}
+.replay {
+    background-color: lavender;
+    position: relative;
+    text-align: left;
+    border: none;
+}
+.ansPage {
+    position: relative;
+    text-align: right;
+    border: none;
+}
+#ansTitle {
+    background-color: white;
+    text-align: center;
+    margin: 10%;
+}
+#left {
+    background-color: black;
+    color: white;
+    text-align: center;
+    margin: 10%;
+    padding:2%;
+}
+.blankRs {
+    background-color: #fbca03;
+    position:relative;
+    left: 50%;
+    border:none;
 }
