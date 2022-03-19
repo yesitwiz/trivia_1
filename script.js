@@ -1,19 +1,45 @@
 console.log('I\'m working!')
 
+//game.html
 let presentedQues = document.getElementById("question");
+let checkAns = document.getElementById("checkID");
 
 let presentedAns = document.getElementById("btnA");
-let responseA = document.getElementById('a')
-
 let presentedAns2 = document.getElementById("btnB");
 let presentedAns3 = document.getElementById("btnC");
 let presentedAns4 = document.getElementById("btnD");
 
+let response = document.getElementById("response");
+
+let counter = document.querySelector(".num");
+let score = 0;
+
+function newBtn() {
+    console.log(counter.innerHTML);
+    let quesID = counter.innerHTML - 1
+    let ans = gameLogic[quesID].answer
+    console.log(ans)
+    console.log(selected)
+    if(ans == selected) {
+        alert('correct**')
+    } else {
+        alert('incorrect**')
+    } 
+};
+
+//if we're on x ques and and opt x is selected, check answer
+//func called, will pull what ques you're on 
+//what ques are we on. for x ques, pull from array
 
 
-//array of obj? questions
+/*
+array of objects. I'm unsure if I need this code here as of now. 
+In fetch.json, this array of objects is there and it does populate in the browser console.
+However, the questions don't populate on screen. More info on why, in the functions below.
+*/
 let gameLogic = [
     {
+        id: 0,
         ques: "Who is Captain America's original best friend?",
         opts: {
             a: 'Bucky Barnes',
@@ -21,9 +47,10 @@ let gameLogic = [
             c: 'Bruce Banner',
             d: 'Sam Wilson'
         },
-        answer: 'Bucky Barnes'
+        answer: 'a',
     },
     {
+        id: 1,
         ques: "Where is Gamora from?",
         opts: {
             a: 'Earth',
@@ -31,9 +58,10 @@ let gameLogic = [
             c: 'Xandar',
             d: 'Titan'
         },
-        answer: 'Zen-Whoberi'
+        answer: 'b'
     },
     {
+        id: 2,
         ques: "Why was Killmonger angry with Wakanda?",
         opts: {
             a: 'They treated him as an outcast',
@@ -41,9 +69,10 @@ let gameLogic = [
             c: 'They murdered his father',
             d: 'His birthday wasn\'t recognized',
         },
-        answer : 'They murdered his father'
+        answer : 'c'
     },
     {
+        id: 3,
         ques: "Who says 'I can do this all day'?",
         opts: {
             a: 'Star Lord',
@@ -51,9 +80,10 @@ let gameLogic = [
             c: 'Captain America',
             d: 'Doctor Strange',
         },
-        answer: 'Captain America'
+        answer: 'c'
     },
     {
+        id: 4,
         ques: "Thor's Stormbreaker was made on what planet?",
         opts: {
             a: 'Asgard',
@@ -61,9 +91,10 @@ let gameLogic = [
             c: 'Knowhere',
             d: 'Nidavellir',
         },
-        answer: 'Nidavellir'
+        answer: 'd'
     },
     {
+        id: 5,
         ques: "What town did Wanda control?",
         opts: {
             a: 'Columbus, OH',
@@ -71,9 +102,10 @@ let gameLogic = [
             c: 'Nashville, TN',
             d: 'Milwaukee, WI',
         },
-        answer: 'Westview, NJ'
+        answer: 'b'
     },
     {
+        id: 6,
         ques: "In Infinity War, why did Hulk not come out?",
         opts: {
             a: 'He was tired from fighting on Sakaar',
@@ -81,9 +113,10 @@ let gameLogic = [
             c: 'The aliens did not interest him',
             d: 'He wasn\'t ready to face Thanos after Hulk lost',
         },
-        answer: 'He wasn\'t ready to face Thanos after Hulk lost'
+        answer: 'd'
     },
     {
+        id: 7,
         ques: "Where is Shang-Chi's Mother from?",
         opts: {
             a: 'Tove Lo ',
@@ -91,19 +124,21 @@ let gameLogic = [
             c: 'Louisiana',
             d: 'Ta Lo',
         },
-        answer: 'Ta Lo'
+        answer: 'd'
     },
     {
+        id: 8,
         ques: "How does Doctor Strange injure his hands?",
         opts: {
-            a: 'car crash',
-            b: 'fist fight',
-            c: 'arthritis',
-            d: 'burns',
+            'a': 'car crash',
+            'b': 'fist fight',
+            'c': 'arthritis',
+            'd': 'burns',
         },
-        answer: 'car crash'
+        answer: 'a'
     },
     {
+        id: 9,
         ques: "Before becoming Sorceror Supreme, what was Wong's position",
         opts: {
             a: 'guard',
@@ -116,62 +151,74 @@ let gameLogic = [
     
 ];
 
-let counter = document.querySelector(".num");
-// let counter = document.querySelector("#num");
+function loop() {
+    show(counter.innerHTML++)
+}
 
-// gameLogic[0].ques
-function show(){
-    
-    let num0 = gameLogic[0];
+let selected = ""
+
+function show(plus) {
+//plus is the num of qus to show
+if(plus == undefined) {
+    plus = 0
+}
+if(plus >= gameLogic.length) {
+    resultsPage
+    //put results where ques used to be 
+} else {
+
+    let num0 = gameLogic[plus]
+
 
     document.querySelector('#question').innerHTML = num0.ques;
+
 
     presentedAns.innerHTML = num0.opts['a'];
     presentedAns2.innerHTML = num0.opts['b'];
     presentedAns3.innerHTML = num0.opts['c'];
     presentedAns4.innerHTML = num0.opts['d'];
 
-        
-    presentedAns.addEventListener('click', result);
-    presentedAns2.addEventListener('click', result);
-    presentedAns3.addEventListener('click', result);
-    presentedAns4.addEventListener('click', result);
+    presentedAns.addEventListener('click', () => {
+        presentedAns.style.backgroundColor = "green";
+    presentedAns2.style.backgroundColor = "red";
+    presentedAns3.style.backgroundColor = "red";
+    presentedAns4.style.backgroundColor = "red";
+    selected = 'a'
+    })
 
-    // presentedAns =document.getElementById('response') ;
-    
-        // } else {
-        //     alert ('incorrect')
-        //     counter.innerHTML = '2 '
-        //     return show2()
-        
- 
-
-function result () {
-    for(let i=0; i == gameLogic[0] && 'Bucky Barnes';)
-    // if(gameLogic[0] == 'Bucky Barnes')
-     {
-        alert('correct')
-        // counter.innerHTML = '2 '
-        // return show2()
+presentedAns2.addEventListener('click', () => {
+    presentedAns2.style.backgroundColor = "green";
+presentedAns.style.backgroundColor = "red";
+presentedAns3.style.backgroundColor = "red";
+presentedAns4.style.backgroundColor = "red";
+selected = 'b'
+})
+presentedAns3.addEventListener('click', () => {
+    presentedAns3.style.backgroundColor = "green";
+presentedAns2.style.backgroundColor = "red";
+presentedAns.style.backgroundColor = "red";
+presentedAns4.style.backgroundColor = "red";
+selected = 'c'
+})
+presentedAns4.addEventListener('click', () => {
+    presentedAns4.style.backgroundColor = "green";
+presentedAns2.style.backgroundColor = "red";
+presentedAns3.style.backgroundColor = "red";
+presentedAns.style.backgroundColor = "red";
+selected = 'd'
+})
     }
+
 }
-}
-// function result() {
-//     alert('correct')
-//     counter.innerHTML = '2 '
-//     return show2()
-// }
-    // for(let gameLogic = 0; )
-//     if(gameLogic[0] === 'a') {
-//         alert('correct');
-//     } else {
-//         alert('incorrect');
-//     }
-    
-//     } 
-// ;
+    function result1() {
+    // if(presentedAns == (obj[0].answer)) {
+        // document.getElementById("btnA").style.color = 'green';
+        counter.innerHTML = '2'
+        show2()
+    }
 
 function show2() {
+    console.log("show2")
 
     let num1 = gameLogic[1];
 
@@ -182,24 +229,37 @@ function show2() {
     presentedAns3.innerHTML = num1.opts['c'];
     presentedAns4.innerHTML = num1.opts['d'];
 
-    presentedAns.addEventListener('click', wrongResult2);
+    presentedAns.addEventListener('click', result2);
     presentedAns2.addEventListener('click', result2);
-    presentedAns3.addEventListener('click', wrongResult2);
-    presentedAns4.addEventListener('click', wrongResult2);
+    presentedAns3.addEventListener('click', result2);
+    presentedAns4.addEventListener('click', result2);
 
-
+//set up one button. what question are we on? (a,b,c)
 
 function result2() {
-    alert('correct')
-    counter.innerHTML = '3 '
-    return show3()
-}
-function wrongResult2() {
-    alert('incorrect')
+        if(presentedAns == 'Zen-Whoberi') {
+            document.getElementById("btnB").style.color = 'green';
+            counter.innerHTML = '3'
+            show2()
+        } else if (presentedAns !== 'Zen-Whoberi') {
+            document.getElementById("btnA").style.color = 'red';
+            counter.innerHTML = '3'
+            show3()
+        }
+//     alert('correct')
+//     counter.innerHTML = '3 '
+//     show3()
+// }
+// function wrongResult2() {
+//     alert('incorrect')
+//     counter.innerHTML = '3'
+//     show3()
 }
 }
 
 function show3() {
+    console.log("show3")
+
 
     let num2 = gameLogic[2];
 
@@ -210,23 +270,24 @@ function show3() {
     presentedAns3.innerHTML = num2.opts['c'];
     presentedAns4.innerHTML = num2.opts['d'];
 
-    presentedAns.addEventListener('click', wrongResult3);
-    presentedAns2.addEventListener('click', wrongResult3);
+    presentedAns.addEventListener('click', result3);
+    presentedAns2.addEventListener('click', result3);
     presentedAns3.addEventListener('click', result3);
-    presentedAns4.addEventListener('click', wrongResult3);
-
-
-
+    presentedAns4.addEventListener('click', result3);
 function result3()
     {
         alert('correct')
         counter.innerHTML = '4'
-        return show4()
+        show4()
     }
-    function wrongResult3() {
-        alert('incorrect')
-    }
+// function wrongResult3() {
+//         alert('incorrect')
+//         counter.innerHTML = '4'
+//         show4()
+//     }
 }
+
+
 function show4() {
 
     let num3 = gameLogic[3];
@@ -238,20 +299,21 @@ function show4() {
     presentedAns3.innerHTML = num3.opts['c'];
     presentedAns4.innerHTML = num3.opts['d'];
     
-    
-    presentedAns.addEventListener('click', wrongResult4);
-    presentedAns2.addEventListener('click', wrongResult4);
+    presentedAns.addEventListener('click', result4);
+    presentedAns2.addEventListener('click', result4);
     presentedAns3.addEventListener('click', result4);
-    presentedAns4.addEventListener('click', wrongResult4);
-}
+    presentedAns4.addEventListener('click', result4);
 
 function result4() {
-    alert('correct')
+    // alert('correct')
     counter.innerHTML = '5'
-    return show5()
+    show5()
 }
-function wrongResult4() {
-    alert('incorrect')
+// function wrongResult4() {
+//     // alert('incorrect')
+//     counter.innerHTML = '5'
+//     show5()
+// }
 }
 
 function show5() {
@@ -269,15 +331,17 @@ function show5() {
     presentedAns2.addEventListener('click', wrongResult5);
     presentedAns3.addEventListener('click', wrongResult5);
     presentedAns4.addEventListener('click', result5);
-}
 
 function result5() {
     alert('correct')
     counter.innerHTML = '6'
-    return show6()
+    show6()
 }
 function wrongResult5() {
     alert('incorrect')
+    counter.innerHTML = '6'
+    show6()
+}
 }
 
 function show6() {
@@ -295,15 +359,17 @@ function show6() {
     presentedAns2.addEventListener('click', result6);
     presentedAns3.addEventListener('click', wrongResult6);
     presentedAns4.addEventListener('click', wrongResult6);
-}
 
 function result6() {
     alert('correct')
     counter.innerHTML = '7'
-    return show7()
+    show7()
 }
 function wrongResult6() {
     alert('incorrect')
+    counter.innerHTML = '7'
+    show7()
+}
 }
 
 function show7() {
@@ -321,15 +387,17 @@ function show7() {
     presentedAns2.addEventListener('click', wrongResult7);
     presentedAns3.addEventListener('click', wrongResult7);
     presentedAns4.addEventListener('click', result7);
-}
 
 function result7() {
     alert('correct')
     counter.innerHTML = '8'
-    return show8()
+    show8()
 }
 function wrongResult7() {
     alert('incorrect')
+    counter.innerHTML = '8'
+    show8()
+}
 }
 
 function show8() {
@@ -347,15 +415,17 @@ function show8() {
     presentedAns2.addEventListener('click', wrongResult8);
     presentedAns3.addEventListener('click', wrongResult8);
     presentedAns4.addEventListener('click', result8);
-}
 
 function result8() {
     alert('correct')
     counter.innerHTML = '9'
-    return show9()
+    show9()
 }
 function wrongResult8() {
     alert('incorrect')
+    counter.innerHTML = '9'
+    show9()
+}
 }
 
 function show9() {
@@ -373,15 +443,17 @@ function show9() {
     presentedAns2.addEventListener('click', wrongResult9);
     presentedAns3.addEventListener('click', wrongResult9);
     presentedAns4.addEventListener('click', wrongResult9);
-}
 
 function result9() {
     alert('correct')
     counter.innerHTML = '10'
-    return show10()
+    show10()
 }
 function wrongResult9() {
     alert('incorrect')
+    counter.innerHTML = '10'
+    show10()
+}
 }
 
 function show10() {
@@ -398,15 +470,21 @@ function show10() {
     presentedAns.addEventListener('click', wrongResult10);
     presentedAns2.addEventListener('click', wrongResult10);
     presentedAns3.addEventListener('click', wrongResult10);
-    presentedAns4.addEventListener('click', result10);
-}
+  presentedAns4.addEventListener('click', result10);
+
 
 function result10() {
-    alert('correct')
-
-    
-    // return show7()
+//     alert('correct')
+showFinal()
 }
+
 function wrongResult10() {
-    alert('incorrect')
+//     alert('incorrect')
+showFinal()
+ }
+}
+
+function showFinal() {
+    
+//results.html should be here
 }

@@ -90,3 +90,121 @@ let's try a couple. will js try to run functions that have nothing to do with th
 
 
 */
+
+// gameLogic[0].ques
+// function show(){
+
+//     let num = gameLogic[0]
+//     document.querySelector('#question').innerHTML = num.ques;
+
+//     presentedAns.innerHTML = num1.opts['a'];
+//         presentedAns2.innerHTML = num1.opts['b'];
+//         presentedAns3.innerHTML = num1.opts['c'];
+//         presentedAns4.innerHTML = num1.opts['d'];
+    
+// }
+// for(let i = 0; i < gameLogic.length; i++) {
+    
+//     if(presentedQues == gameLogic[i].answer) {
+//         score++;
+//         counter.innerHTML = "2"
+//         alert('correct');
+//     }else {
+//         alert('wrong')
+//     }
+// }
+
+//     presentedAns.addEventListener('click', next);
+//     presentedAns2.addEventListener('click', next);
+//     presentedAns3.addEventListener('click', next);
+//     presentedAns4.addEventListener('click', next);
+
+//     function next () {
+//         if(presentedQues ) {
+//             alert('correct')
+//             counter.innerHTML = '2'
+//             return show2()
+//             // next.target.getAttribute('btnA', 'disabled', 'disabled')
+            
+//         } else {
+//             alert('incorrect') 
+//             return show2()
+//         }
+//     }
+    
+//     // presentedAns =document.getElementById('response') ;
+    
+//         // } else {
+//         //     alert ('incorrect')
+//         //     counter.innerHTML = '2 '
+//         //     return show2()
+        
+ 
+
+// // function result () {
+// //     for(let i=0; i == gameLogic[0] && 'Bucky Barnes';)
+// //     // if(gameLogic[0] == 'Bucky Barnes')
+// //      {
+// //         alert('correct')
+//         // counter.innerHTML = '2 '
+//         // return show2()
+//     }
+// // function result() {
+// //     alert('correct')
+// //     counter.innerHTML = '2 '
+// //     return show2()
+// // }
+//     // for(let gameLogic = 0; )
+// //     if(gameLogic[0] === 'a') {
+// //         alert('correct');
+// //     } else {
+// //         alert('incorrect');
+// //     }
+    
+// //     } 
+// // ;
+
+/*
+
+code the previous tutor was showing me. I do need more practice in fetch but believe 
+I know enough to be able to present it and answer basic questions on it
+
+
+fetch('fetch.json').then(function (response){
+    return response.json();
+}).then(function (obj){
+    if(presentedAns == (obj[0].answer)) {
+        document.getElementById("btnA").style.color = 'green';
+        counter.innerHTML = '2'
+        show2()
+    } else if (presentedAns !== 'a') {
+        document.getElementById("btnA").style.color = 'red';
+        counter.innerHTML = '2'
+        show2()
+    }
+    document.getElementById('response').innerHTML = '<div>' + obj.opts + '</div>'
+
+console.log(obj[1].ques)
+*/
+
+/*
+To have the questions and selections render on screen, I did a 
+    <body onload="show()"></body>.
+
+This allowed for all questions to be rendered and show in proper order.
+
+The output is once the fetch is commented back in and line168-172 is commmented out, no ques/ans are rendered
+
+from here on down, the code is very similar. the differnce is farther down the alerts are still written in.
+After a few questions are answered, you should see how the alerts compound.
+I did attempt a disable but it disabled the whole button vs just the alert on any given function
+
+
+
+the functions showX() changes the 'X' from 2-10
+
+ the let numX = gameLogic[x] changes the 'X' from 0-9 as it is calling the index of objects in the array.
+
+ I can change the showX to align with the numbering on the 
+ let numX=gameLogic[X] if I have time
+*/

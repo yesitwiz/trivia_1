@@ -8,24 +8,26 @@
     <title> MCU Trivia - Assemble! </title>
 </head>
 <body>
-    <body onload="show()">
+    <body onload="show()"></body>
 
-<div class="container">
+<div class="main-container">
     <h3>
         Trivia- ASSEMBLE!    
     </h3>
-    
+    <div class="result">
+
+    </div>
     <div id= "numberedQuest"><span class="num">1 </span>/ 10</div>
     <br>
 
-    <div id="question"></div>
+    <div class="question-container" id="question"></div>
     <br>
 
-    <div id="response"> 
-        <button class="btn" id="btnA"><div class="answer" id="a"> </div></button>
-        <button class="btn" id="btnB"><div class="answer" id="b"> </div></button>
-        <button class="btn" id="btnC"><div class="answer" id="c"> </div></button>
-        <button class="btn" id="btnD"><div class="answer" id="d"> </div></button>
+    <div class="options"> 
+        <button class="btn" id="btnA" input type="button"><div class="answer" id="a"> </div></button>
+        <button class="btn" id="btnB" input type="button"><div class="answer" id="b"> </div></button>
+        <button class="btn" id="btnC" input type="button"><div class="answer" id="c"> </div></button>
+        <button class="btn" id="btnD" input type="button"><div class="answer" id="d"> </div></button>
     
     </div>
 </div>
@@ -33,6 +35,8 @@
 
     <div class="rsBtn">
     <button class="blankRs"><a href="index.html" style="text-decoration:none">Reset!</a></button>
+        <button id="checkID" onclick="newBtn()">Check Answer</button>
+        <button id="nextBtn" onclick="loop()">Next</button>
     </div>
     
     <script src="script.js"></script>

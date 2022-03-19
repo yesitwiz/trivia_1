@@ -1,6 +1,16 @@
 body {
     background-color: #aa0505;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
     
+}
+.main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:stretch;
 }
 .starterHead {
     background-color: #518dca;
@@ -24,11 +34,6 @@ body {
     margin-top: 5%;
     border: none;
 }
-.container{
-    background-color: gainsboro;
-    text-align: center;
-    padding: 5%;
-}
 .btn {
     background-color: #fbca03;
     padding: 1.5%;
@@ -40,4 +45,11 @@ body {
     background-color: gainsboro;
     
     border: none; 
+}
+#results{
+    left: 90%;
+    border: none;
+}
+#right {
+    list-style: none;
 }
