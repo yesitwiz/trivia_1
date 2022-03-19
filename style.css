@@ -14,6 +14,9 @@ body {
     border: 6%;
     margin: 5%;
 }
+#pgHead {
+    color: white;
+}
 .results-container {
    background-color: #aa0505;
 }
