@@ -12,13 +12,19 @@ The user will test their knowledge and receive the percentage of their score.
 ## Code Styles 
 
 JavaScript
+
 HTML
+
 CSS
 
 --------------------
 
 ## MVP
 
+As a player, I want the initial page to load seamlessly.
+As a player, I want all buttons necessary to play the game, to be easily visible and clickable.
+As a player, I want to be informed if I answered correctly or incorrectly right after submitting my response with a basic x or checkmark.
+As a player, I want to be able to restart the game at any point I choose
 
 ---------------------
 
