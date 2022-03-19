@@ -1,6 +1,6 @@
 # Trivia - Assemble!
 
-**Live Link:** [Play!](link)
+**Live Link:** [Play!](https://yesitwiz.github.io/trivia_1/index.html)
 
 ## Objective
 
